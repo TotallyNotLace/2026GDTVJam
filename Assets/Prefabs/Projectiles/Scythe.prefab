@@ -99,12 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 972be24aca308c44c99dec3043ad17d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
-  rotationSpeed: 300
   rotationAngle: {x: 0, y: 0, z: 1}
-  forward: {x: 0, y: 0, z: 0}
-  flySpeed: 1
-  lifeTime: 10
   model: {fileID: 4220923006818424062}
+  stats: {fileID: 11400000, guid: 37526595279c9764696df67d23008ed1, type: 2}
 --- !u!1001 &248818728830491836
 PrefabInstance:
   m_ObjectHideFlags: 0

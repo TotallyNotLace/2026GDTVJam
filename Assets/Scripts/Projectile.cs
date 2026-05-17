@@ -1,23 +1,45 @@
+using ScriptableObjects;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] private float rotationSpeed;
+    [Header("Model Settings")]
     [SerializeField] private Vector3 rotationAngle;
 
-    [SerializeField] private Vector3 forward;
-    [SerializeField] private float flySpeed;
-
-    [SerializeField] private float lifeTime;
-
+    [Header("Object References")]
     [SerializeField] private GameObject model;
-    void Start()
+    [SerializeField] private ProjectileObject stats;
+
+    //hidden stats
+    private int piercing;
+
+    private void Start()
     {
-        Destroy(this.gameObject, lifeTime);
+        Destroy(this.gameObject, stats.lifeTime);
+        piercing = stats.piercing;
     }
-    void Update()
+    private void Update()
     {
-        model.transform.Rotate(rotationAngle * rotationSpeed * Time.deltaTime);
-        transform.Translate(Vector3.forward * flySpeed * Time.deltaTime);
+        model.transform.Rotate(rotationAngle * stats.spinSpeed * Time.deltaTime);
+        transform.Translate(Vector3.forward * stats.moveSpeed * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Enemy"))
+        {
+            //GetComponent<T>().DoTheDamage(stats.damage);
+            HandleEnemyHit();
+        }
+    }
+
+    private void HandleEnemyHit()
+    {
+        if(piercing == 0)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        piercing--;
     }
 }
