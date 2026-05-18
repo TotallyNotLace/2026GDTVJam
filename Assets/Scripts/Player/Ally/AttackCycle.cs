@@ -16,9 +16,13 @@ namespace Player.Ally
         [SerializeField] private Material atkMaterial;
         [SerializeField] private Material nmlMaterial;
 
-        [SerializeField] private MeshRenderer model;
+        [SerializeField] private Transform model;
 
         [SerializeField] private GameObject projectilePrefab;
+
+        [SerializeField] private ModelAnimator modelAnimator;
+
+        private bool throwComplete = false;
 
         private void Start()
         {
@@ -37,23 +41,30 @@ namespace Player.Ally
             isAttacking = false;
         }
 
-        private IEnumerator AttackPeriod()
+        public void OnThrowComplete()
         {
-            yield return new WaitForSeconds(attackDelay);
-            
-            while (isAttacking)
-            {
-
-                model.material = atkMaterial;
-                Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-
-                yield return new WaitForSeconds(animationLength);
-                model.material = nmlMaterial;
-
-                yield return new WaitForSeconds(attackDelay);
-            }
+            throwComplete = true;
         }
 
+        public void OnThrowApex()
+        {
+            Instantiate(projectilePrefab, transform.position, model.rotation);
+        }
 
+        private IEnumerator AttackPeriod()
+        {
+
+            while (isAttacking)
+            {
+                //start attack animation
+                throwComplete = false;
+                modelAnimator.OnThrowEvent();
+                //wait for throw complete.
+                yield return new WaitUntil(() => throwComplete);
+                //wait for delay.
+                yield return new WaitForSeconds(attackDelay);
+                //return to the start of the coroutine
+            }
+        }
     }
 }

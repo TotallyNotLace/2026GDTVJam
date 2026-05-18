@@ -1,3 +1,4 @@
+using System.Collections;
 using ScriptableObjects;
 using UnityEngine;
 
@@ -13,31 +14,46 @@ public class Projectile : MonoBehaviour
     //hidden stats
     private int piercing;
 
+    private bool isAlive = false;
+
+    private Coroutine movement;
+
     private void Start()
     {
-        Destroy(this.gameObject, stats.lifeTime);
+        //Destroy(this.gameObject, stats.lifeTime);
         piercing = stats.piercing;
-    }
-    private void Update()
-    {
-        model.transform.Rotate(rotationAngle * stats.spinSpeed * Time.deltaTime);
-        transform.Translate(Vector3.forward * stats.moveSpeed * Time.deltaTime);
+        movement = StartCoroutine(MoveCycle());
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Enemy"))
+        Debug.Log($"{this.gameObject.name} hit object: {other.gameObject.name}");
+        if (other.CompareTag("Enemy"))
         {
-            //GetComponent<T>().DoTheDamage(stats.damage);
+            other.gameObject.GetComponent<Life>().TakeDamage(stats.damage);
             HandleEnemyHit();
         }
     }
 
+    private IEnumerator MoveCycle()
+    {
+        isAlive = true;
+        while (isAlive)
+        {
+            model.transform.Rotate(rotationAngle * stats.spinSpeed * Time.deltaTime);
+            transform.Translate(Vector3.forward * stats.moveSpeed * Time.deltaTime);
+            yield return new WaitForEndOfFrame();
+        }
+
+    }
+
     private void HandleEnemyHit()
     {
-        if(piercing == 0)
+        if (piercing == 0)
         {
-            Destroy(this.gameObject);
+            isAlive = false;
+            //StopCoroutine(movement);
+            this.gameObject.SetActive(false);
             return;
         }
         piercing--;
