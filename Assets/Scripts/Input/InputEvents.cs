@@ -19,8 +19,6 @@ public class InputEvents : MonoBehaviour
 
         playerController.Player.Attack.performed += OnShootyPress;
         playerController.Player.Attack.canceled += OnShootyPress;
-
-        Debug.Log("[ShipInputEvents] Input enabled for local player.");
     }
 
     private void OnMovementInput(InputAction.CallbackContext context)

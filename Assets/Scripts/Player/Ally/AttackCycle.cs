@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Pool;
 
 namespace Player.Ally
 {
@@ -18,11 +19,13 @@ namespace Player.Ally
 
         [SerializeField] private Transform model;
 
-        [SerializeField] private GameObject projectilePrefab;
+        //[SerializeField] private Projectile projectilePrefab;
 
         [SerializeField] private ModelAnimator modelAnimator;
 
+        [SerializeField] private ProjectilePool projectilePool;
         private bool throwComplete = false;
+
 
         private void Start()
         {
@@ -48,7 +51,10 @@ namespace Player.Ally
 
         public void OnThrowApex()
         {
-            Instantiate(projectilePrefab, transform.position, model.rotation);
+            Projectile projectile = projectilePool.Get();
+            projectile.Init(projectilePool);
+            projectile.transform.SetPositionAndRotation(transform.position, model.rotation);
+
         }
 
         private IEnumerator AttackPeriod()

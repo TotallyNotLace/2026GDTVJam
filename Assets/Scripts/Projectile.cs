@@ -1,11 +1,14 @@
 using System.Collections;
 using ScriptableObjects;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class Projectile : MonoBehaviour
 {
     [Header("Model Settings")]
     [SerializeField] private Vector3 rotationAngle;
+
+    [SerializeField] private bool isPoolNull;
 
     [Header("Object References")]
     [SerializeField] private GameObject model;
@@ -16,18 +19,22 @@ public class Projectile : MonoBehaviour
 
     private bool isAlive = false;
 
-    private Coroutine movement;
+    private ProjectilePool _pool;
 
-    private void Start()
+    public void Init(ProjectilePool pool)
     {
-        //Destroy(this.gameObject, stats.lifeTime);
+        _pool = pool;
         piercing = stats.piercing;
-        movement = StartCoroutine(MoveCycle());
+        StopAllCoroutines();
+        StartCoroutine(MoveCycle());
+        StartCoroutine(LifeCycle());
+        Debug.Log($"I recieved this pool though {pool}");
+        Debug.Log($"the pool is {_pool}");
+        //Debug.Log($"Init on instance ID: {gameObject.GetInstanceID()}");
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnSubTrigger(GameObject other)
     {
-        Debug.Log($"{this.gameObject.name} hit object: {other.gameObject.name}");
         if (other.CompareTag("Enemy"))
         {
             other.gameObject.GetComponent<Life>().TakeDamage(stats.damage);
@@ -35,6 +42,11 @@ public class Projectile : MonoBehaviour
         }
     }
 
+    private IEnumerator LifeCycle()
+    {
+        yield return new WaitForSeconds(stats.lifeTime);
+        EndOfLife();
+    }
     private IEnumerator MoveCycle()
     {
         isAlive = true;
@@ -44,18 +56,27 @@ public class Projectile : MonoBehaviour
             transform.Translate(Vector3.forward * stats.moveSpeed * Time.deltaTime);
             yield return new WaitForEndOfFrame();
         }
-
     }
 
     private void HandleEnemyHit()
     {
         if (piercing == 0)
         {
-            isAlive = false;
-            //StopCoroutine(movement);
-            this.gameObject.SetActive(false);
-            return;
+            EndOfLife();
         }
         piercing--;
+    }
+
+    private void EndOfLife()
+    {
+        Debug.Log($"End Called ");
+        isAlive = false;
+        StopAllCoroutines();
+        _pool.Release(this);
+    }
+
+    void Update()
+    {
+        isPoolNull = _pool == null;
     }
 }

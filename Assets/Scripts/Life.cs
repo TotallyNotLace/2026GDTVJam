@@ -48,7 +48,7 @@ public class Life : MonoBehaviour
 
         if(currentHealth == 0)
         {
-            Destroy(this.gameObject);
+            LifeEnded.Invoke();
         }
     }
 }
