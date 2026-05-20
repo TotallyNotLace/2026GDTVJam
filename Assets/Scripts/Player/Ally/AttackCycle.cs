@@ -1,8 +1,5 @@
-using System;
 using System.Collections;
-using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Pool;
 
 namespace Player.Ally
 {
@@ -19,13 +16,11 @@ namespace Player.Ally
 
         [SerializeField] private Transform model;
 
-        //[SerializeField] private Projectile projectilePrefab;
-
         [SerializeField] private ModelAnimator modelAnimator;
 
         [SerializeField] private ProjectilePool projectilePool;
         private bool throwComplete = false;
-
+        private Coroutine _attackCoroutine;
 
         private void Start()
         {
@@ -35,13 +30,18 @@ namespace Player.Ally
         public void StartAttack()
         {
             if (isAttacking) return;
-            isAttacking = true;
-            StartCoroutine(AttackPeriod());
+
+            _attackCoroutine = StartCoroutine(AttackPeriod());
         }
 
         public void StopAttack()
         {
             isAttacking = false;
+            if (_attackCoroutine != null)
+            {
+                StopCoroutine(_attackCoroutine);
+                _attackCoroutine = null;
+            }
         }
 
         public void OnThrowComplete()
@@ -59,7 +59,7 @@ namespace Player.Ally
 
         private IEnumerator AttackPeriod()
         {
-
+            isAttacking = true;
             while (isAttacking)
             {
                 //start attack animation

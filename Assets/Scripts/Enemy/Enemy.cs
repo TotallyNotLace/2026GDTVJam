@@ -2,20 +2,39 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
+
 public class Enemy : MonoBehaviour
 {
     private EnemyPool _pool;
 
-    public Action<GameObject> deathEvent;
+    [SerializeField] private EnemyAnimator initializeAnim;
 
-    public void Init(EnemyPool pool)
+    [SerializeField] private Collider col;
+    public Action<GameObject> deathEvent;
+    [SerializeField] private BasicNavAgent agent;
+
+    [SerializeField] private UnityEvent startDeathAnimation;
+
+    void Awake()
     {
+        initializeAnim.InitAnim();
+    }
+    public void Init(EnemyPool pool, MainAllyController player)
+    {
+        agent.SetTarget(player.gameObject.transform);
+        col.enabled = true;
         _pool = pool;
     }
 
     public void OnEndOfLife()
     {
-        _pool.Release(this);
+        col.enabled = false;
         deathEvent?.Invoke(this.gameObject);
+        startDeathAnimation?.Invoke();
+    }
+
+    public void CompleteDeathCycle()
+    {
+        _pool.Release(this);
     }
 }

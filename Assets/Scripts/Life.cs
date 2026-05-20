@@ -22,7 +22,13 @@ public class Life : MonoBehaviour
 
     private void Start()
     {
+
+    }
+
+    void OnEnable()
+    {
         currentHealth = entity.maxLife;
+        canBeDamaged = true;
     }
 
     public void TakeDamage(float damage)
@@ -39,16 +45,13 @@ public class Life : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentHealth = 0;
-
+            canBeDamaged = false;
+            LifeEnded.Invoke();
         }
 
         LifeChanged.Invoke(currentHealth);
         yield return new WaitForSeconds(entity.immuneFrames);
         canBeDamaged = true;
 
-        if(currentHealth == 0)
-        {
-            LifeEnded.Invoke();
-        }
     }
 }

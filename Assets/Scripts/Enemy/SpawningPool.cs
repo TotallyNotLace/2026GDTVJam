@@ -6,6 +6,7 @@ public class SpawningPool : MonoBehaviour
     [SerializeField] private EnemyPool enemyPool;
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private float spawnInterval;
+    [SerializeField] private MainAllyController mainAllyController;
 
     private bool isSpawning = false;
 
@@ -38,7 +39,7 @@ public class SpawningPool : MonoBehaviour
     private void SpawnEnemy(Vector3 position)
     {
         Enemy enemy = enemyPool.Get();
-        enemy.Init(enemyPool);
+        enemy.Init(enemyPool, mainAllyController);
         enemy.transform.SetPositionAndRotation(position, Quaternion.identity);
     }
 

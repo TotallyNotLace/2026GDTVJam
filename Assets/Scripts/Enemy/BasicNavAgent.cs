@@ -6,15 +6,25 @@ public class BasicNavAgent : MonoBehaviour
     [SerializeField] private Transform target;
     private NavMeshAgent agent;
 
-    void Awake()
+    private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
 
     }
 
-    void Update()
+    public void SetTarget(Transform playerTarget)
+    {
+        target = playerTarget;
+    }
+
+    private void Update()
     {
         if (target != null)
             agent.SetDestination(target.position);
+    }
+
+    public void OnDeathClearTarget()
+    {
+        target = transform;
     }
 }

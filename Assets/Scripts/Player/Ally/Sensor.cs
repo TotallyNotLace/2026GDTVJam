@@ -29,18 +29,20 @@ namespace Player.Ally
 
         private void OnTriggerExit(Collider other)
         {
+            Debug.Log("Something left");
             if (detectedObjects.Contains(other.gameObject))
             {
+                Debug.Log("Leaving the queue from walking");
                 other.GetComponent<Enemy>().deathEvent -= EnemyLeaveLogic;
-                EnemyLeaveLogic(gameObject);
+                EnemyLeaveLogic(other.gameObject);
             }
         }
 
         private void EnemyLeaveLogic(GameObject other)
         {
-            
-            detectedObjects.Remove(other.gameObject);
-            detectionTargetLeft.Invoke(other.gameObject);
+            Debug.Log("Leaving the queue from the function");
+            detectedObjects.Remove(other);
+            detectionTargetLeft.Invoke(other);
         }
     }
 

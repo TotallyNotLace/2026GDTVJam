@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd0324378253634c8d2badfb815c9b4, type: 3}
   m_Name: BasicCube
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableObjects.Enemy
-  maxLife: 3
+  maxLife: 1
   defense: 0
   damage: 1
   moveSpeed: 3.5
