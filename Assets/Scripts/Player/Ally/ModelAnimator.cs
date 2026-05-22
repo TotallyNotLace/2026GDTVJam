@@ -34,5 +34,10 @@ namespace Player.Ally
         {
             anim.SetFloat("Blend", speed);
         }
+
+        public void PickupMode(bool mode)
+        {
+            anim.SetBool("Pickup", mode);
+        }
     }
 }

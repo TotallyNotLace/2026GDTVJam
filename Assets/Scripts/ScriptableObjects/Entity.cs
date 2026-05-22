@@ -4,6 +4,7 @@ namespace ScriptableObjects
 {
     public class Entity : ScriptableObject
     {
+        public string allyName;
         public float maxLife;
         public float defense;
         public float damage;

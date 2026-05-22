@@ -1,14 +1,12 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MainAllyController : MonoBehaviour
 {
-    [SerializeField] private GameObject mainAlly;
-    [SerializeField] private List<GameObject> currentAllies;
-    
-    // Update is called once per frame
-    void Update()
+/*     void Update()
     {
-        transform.position = mainAlly.transform.position;
-    }
+        AllyController main = AllyManager.Instance.MainAlly;
+        if (main == null) return;
+
+        transform.position = main.transform.position;
+    } */
 }

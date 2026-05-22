@@ -10,9 +10,11 @@ public class EnemyImpact : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            other.GetComponent<Life>().TakeDamage(stats.damage);
+            AllyController main = AllyManager.Instance.MainAlly;
+            if (main == null) return;
+            main.GetComponent<Life>().TakeDamage(stats.damage);
         }
     }
 }

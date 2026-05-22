@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3331881221254d14f8f8877ddbf9ac8b, type: 3}
   m_Name: Basic
   m_EditorClassIdentifier: Assembly-CSharp::AllyObject
+  allyName: Basic
+  maxLife: 5
+  defense: 0
+  damage: 1.5
   moveSpeed: 3.5
   attackRate: 1.2
-  damage: 1.5
+  immuneFrames: 0

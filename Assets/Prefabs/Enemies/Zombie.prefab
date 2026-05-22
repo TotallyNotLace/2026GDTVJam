@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7733727322317113727}
   - component: {fileID: 2734386699293940100}
   - component: {fileID: 5121371456137775000}
+  - component: {fileID: 9105302678557093785}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Enemy
@@ -207,6 +208,22 @@ MonoBehaviour:
   startDeathAnimation:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &9105302678557093785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7657741589942361392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de59c7e3b320b6b409cb24a24226f0fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyImpact
+  bumpedPlayer:
+    m_PersistentCalls:
+      m_Calls: []
+  stats: {fileID: 11400000, guid: a886e53141aecdc478bedc5d7937e510, type: 2}
 --- !u!1001 &9195714827297494870
 PrefabInstance:
   m_ObjectHideFlags: 0
