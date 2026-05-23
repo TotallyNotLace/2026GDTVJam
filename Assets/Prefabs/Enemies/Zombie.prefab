@@ -363,6 +363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySounder
   audioSource: {fileID: 4793267343944822577}
+  soundVariance: 0.15
   stats: {fileID: 11400000, guid: a886e53141aecdc478bedc5d7937e510, type: 2}
   activeSounds:
   - {fileID: 8300000, guid: c3384674a32323a4094877d3d646fd54, type: 3}

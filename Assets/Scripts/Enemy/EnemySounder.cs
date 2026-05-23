@@ -1,10 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using ScriptableObjects;
-using UnityEditor.Timeline.Actions;
 using UnityEngine;
-using UnityEngine.AI;
-
 
 public class EnemySounder : Sounder
 {
@@ -17,7 +14,7 @@ public class EnemySounder : Sounder
 
     public void StartActiveSounds()
     {
-        if(isPlaying) return;
+        if (isPlaying) return;
         StartCoroutine(ActiveSoundCycle());
     }
 
@@ -31,22 +28,18 @@ public class EnemySounder : Sounder
     private IEnumerator ActiveSoundCycle()
     {
         isPlaying = true;
-        while(isPlaying)
+        while (isPlaying)
         {
             PlayAudio(activeSounds[currentActiveSound]);
 
             currentActiveSound++;
 
-            if(currentActiveSound >= activeSounds.Count)
+            if (currentActiveSound >= activeSounds.Count)
             {
                 currentActiveSound = 0;
             }
 
-
             yield return new WaitForSeconds(stats.soundDelay);
         }
-
-        
-
     }
 }
