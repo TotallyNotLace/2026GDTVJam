@@ -7,6 +7,6 @@ namespace ScriptableObjects
     menuName = "Entity/New Enemy")]
     public class EnemyObject : Entity
     {
-
+        public float soundDelay;
     }
 }

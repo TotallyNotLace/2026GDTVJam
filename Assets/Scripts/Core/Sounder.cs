@@ -2,12 +2,17 @@ using UnityEngine;
 
 public class Sounder : MonoBehaviour
 {
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField] internal AudioSource audioSource;
 
-    private void PlayAudio(AudioClip clip)
+    internal void PlayAudio(AudioClip clip)
     {
         audioSource.clip = clip;
         audioSource.Play();
+    }
+
+    internal void StopAudio()
+    {
+        audioSource.Stop();
         audioSource.clip = null;
     }
 }

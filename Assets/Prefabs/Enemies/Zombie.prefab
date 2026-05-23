@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5121371456137775000}
   - component: {fileID: 9105302678557093785}
   - component: {fileID: 4793267343944822577}
+  - component: {fileID: 7545864494005761300}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Enemy
@@ -141,6 +142,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7545864494005761300}
+        m_TargetAssemblyTypeName: EnemySounder, Assembly-CSharp
+        m_MethodName: StopActiveSounds
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   currentHealth: 0
   entity: {fileID: 11400000, guid: a886e53141aecdc478bedc5d7937e510, type: 2}
 --- !u!54 &7733727322317113727
@@ -203,6 +216,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d6567894e4b9c4c8fd85d3339a68e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  enemyStarted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7545864494005761300}
+        m_TargetAssemblyTypeName: EnemySounder, Assembly-CSharp
+        m_MethodName: StartActiveSounds
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   initializeAnim: {fileID: 3947902046017668944}
   col: {fileID: 2734386699293940100}
   agent: {fileID: 1071001495519166202}
@@ -322,6 +350,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7545864494005761300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7657741589942361392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b0b2b6a236eca47a3c97bcabdf1258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySounder
+  audioSource: {fileID: 4793267343944822577}
+  stats: {fileID: 11400000, guid: a886e53141aecdc478bedc5d7937e510, type: 2}
+  activeSounds:
+  - {fileID: 8300000, guid: c3384674a32323a4094877d3d646fd54, type: 3}
+  - {fileID: 8300000, guid: cf74fb580651e9c4eb2738d7194aa299, type: 3}
 --- !u!1001 &9195714827297494870
 PrefabInstance:
   m_ObjectHideFlags: 0

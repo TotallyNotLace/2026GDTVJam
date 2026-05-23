@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: efd0324378253634c8d2badfb815c9b4, type: 3}
-  m_Name: BasicCube
+  m_Name: Zombie
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableObjects.Enemy
+  allyName: 
   maxLife: 1
   defense: 0
   damage: 1
   moveSpeed: 3.5
   attackRate: 1
   immuneFrames: 0.5
+  soundDelay: 5

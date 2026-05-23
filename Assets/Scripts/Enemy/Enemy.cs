@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour
 {
+
+    [SerializeField] private UnityEvent enemyStarted;
     private EnemyPool _pool;
 
     [SerializeField] private EnemyAnimator initializeAnim;
@@ -24,6 +26,7 @@ public class Enemy : MonoBehaviour
         agent.SetTarget(player.gameObject.transform);
         col.enabled = true;
         _pool = pool;
+        enemyStarted?.Invoke();
     }
 
     public void OnEndOfLife()
