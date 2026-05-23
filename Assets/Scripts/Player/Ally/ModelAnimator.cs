@@ -8,12 +8,20 @@ namespace Player.Ally
     public class ModelAnimator : MonoBehaviour
     {
         [Header("Events")]
-
         [SerializeField] private UnityEvent throwComplete;
         [SerializeField] private UnityEvent throwApex;
 
         [Header("Object References")]
         [SerializeField] private Animator anim;
+        [SerializeField] private Transform modelTrans;
+
+        [Header("Settings")]
+        [SerializeField] private Vector3 neutralPos;
+
+        private void Update()
+        {
+            modelTrans.localPosition = neutralPos;
+        } 
 
         public void OnThrowEvent()
         {

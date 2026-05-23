@@ -67,6 +67,6 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "2026GDTVJam.slnx",
+    "dotnet.defaultSolution": "Pre-Project.slnx",
     "dotnet.enableWorkspaceBasedDevelopment": false
 }
