@@ -715,7 +715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27dd001a068aaf5449d5393f13fbb6fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSpawner
-  startingAllyPrefab: {fileID: 6114807207698325577, guid: b026e02520e8ccb4fadba95fdd314c8d, type: 3}
+  startingAllyPrefab: {fileID: 6114807207698325577, guid: 5ce7fed1537882940b7ee087abd85799, type: 3}
   spawnPoint: {fileID: 1680388883}
   playerMovement: {fileID: 455786251}
 --- !u!114 &455786257
