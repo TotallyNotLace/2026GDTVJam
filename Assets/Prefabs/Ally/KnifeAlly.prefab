@@ -487,7 +487,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400210, guid: fd6d2ab227606bc4298d31d943ff7845, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.77
       objectReference: {fileID: 0}
     - target: {fileID: 400210, guid: fd6d2ab227606bc4298d31d943ff7845, type: 3}
       propertyPath: m_LocalPosition.z
@@ -536,6 +536,11 @@ PrefabInstance:
 --- !u!95 &8247453893525843671 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 9500000, guid: fd6d2ab227606bc4298d31d943ff7845, type: 3}
+  m_PrefabInstance: {fileID: 8247453893535325111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8247453893535187127 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400128, guid: fd6d2ab227606bc4298d31d943ff7845, type: 3}
   m_PrefabInstance: {fileID: 8247453893535325111}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8247453893535187173 stripped
@@ -592,4 +597,5 @@ MonoBehaviour:
         m_CallState: 2
   anim: {fileID: 8247453893525843671}
   modelTrans: {fileID: 8247453893535187173}
+  handLocation: {fileID: 8247453893535187127}
   neutralPos: {x: 0, y: 0, z: 0}

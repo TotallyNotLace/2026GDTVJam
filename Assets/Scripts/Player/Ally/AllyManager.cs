@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using Player;
 using Player.Ally;
+using Unity.VectorGraphics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AllyManager : MonoBehaviour
 {
@@ -71,6 +73,7 @@ public class AllyManager : MonoBehaviour
         if (allies.Count == 0)
         {
             Debug.Log("Game Over");
+            SceneManager.LoadScene(0);
             return;
         }
 

@@ -53,7 +53,7 @@ namespace Player.Ally
         {
             Projectile projectile = projectilePool.Get();
             projectile.Init(projectilePool);
-            projectile.transform.SetPositionAndRotation(transform.position, model.rotation);
+            projectile.transform.SetPositionAndRotation(modelAnimator.GetHandLocation().position, model.rotation);
 
         }
 

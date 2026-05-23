@@ -328,7 +328,7 @@ Transform:
   m_GameObject: {fileID: 8632589636566878299}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.2, y: 0, z: 16.2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -586,10 +586,16 @@ MonoBehaviour:
         m_CallState: 2
   anim: {fileID: 4046917941017540014}
   modelTrans: {fileID: 4046917941010602906}
+  handLocation: {fileID: 4046917941010602954}
   neutralPos: {x: 0, y: 0, z: 0}
 --- !u!4 &4046917941010602906 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400212, guid: ee2de4a56f2f28c4584e6386a690c5e2, type: 3}
+  m_PrefabInstance: {fileID: 4046917941010202830}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4046917941010602954 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400132, guid: ee2de4a56f2f28c4584e6386a690c5e2, type: 3}
   m_PrefabInstance: {fileID: 4046917941010202830}
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &4046917941017540014 stripped

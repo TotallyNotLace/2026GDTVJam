@@ -1,5 +1,3 @@
-using System.Collections;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,6 +12,7 @@ namespace Player.Ally
         [Header("Object References")]
         [SerializeField] private Animator anim;
         [SerializeField] private Transform modelTrans;
+        [SerializeField] private Transform handLocation;
 
         [Header("Settings")]
         [SerializeField] private Vector3 neutralPos;
@@ -46,6 +45,11 @@ namespace Player.Ally
         public void PickupMode(bool mode)
         {
             anim.SetBool("Pickup", mode);
+        }
+
+        public Transform GetHandLocation()
+        {
+            return handLocation;
         }
     }
 }

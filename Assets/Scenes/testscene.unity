@@ -574,6 +574,7 @@ MonoBehaviour:
       m_Calls: []
   anim: {fileID: 455283144}
   modelTrans: {fileID: 455283142}
+  handLocation: {fileID: 455283142}
   neutralPos: {x: 0, y: 0, z: 0}
 --- !u!95 &455283144 stripped
 Animator:
@@ -1582,6 +1583,7 @@ MonoBehaviour:
       m_Calls: []
   anim: {fileID: 1243709988}
   modelTrans: {fileID: 0}
+  handLocation: {fileID: 0}
   neutralPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1370235970
 GameObject:
