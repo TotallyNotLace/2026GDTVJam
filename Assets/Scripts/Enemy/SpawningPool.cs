@@ -4,7 +4,7 @@ using UnityEngine;
 public class SpawningPool : MonoBehaviour
 {
     [SerializeField] private EnemyPool enemyPool;
-    [SerializeField] private Transform spawnPoint;
+    [SerializeField] private SpawnPointManager spawnPoint;
     [SerializeField] private float spawnInterval;
     [SerializeField] private MainAllyController mainAllyController;
 
@@ -45,6 +45,6 @@ public class SpawningPool : MonoBehaviour
 
     private Vector3 GetSpawnPoint()
     {
-        return spawnPoint.position;
+        return spawnPoint.GetRandomSpawnPoint().position;
     }
 }
