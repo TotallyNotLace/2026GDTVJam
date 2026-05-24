@@ -1,13 +1,16 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Pool;
 
 public class EnemyPool : MonoBehaviour
 {
     [SerializeField] private Enemy enemyPrefab;
 
+    [SerializeField] private UnityEvent<Enemy> enemyDefeated;
+
     private IObjectPool<Enemy> _pool;
 
-    void Awake()
+    private void Awake()
     {
         _pool = new ObjectPool<Enemy>(
             createFunc:      CreateEnemy,
@@ -49,6 +52,7 @@ public class EnemyPool : MonoBehaviour
 
     public void Release(Enemy e)
     {
+        enemyDefeated?.Invoke(e);
         _pool.Release(e);
     }
 }

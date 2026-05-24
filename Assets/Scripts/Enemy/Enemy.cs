@@ -17,7 +17,9 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private UnityEvent startDeathAnimation;
 
-    void Awake()
+    public float scoreValue;
+
+    private void Awake()
     {
         initializeAnim.InitAnim();
     }

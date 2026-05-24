@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Settings
   m_EditorClassIdentifier: Assembly-CSharp::SettingsItem
   musicVolumeKey: MusicVolume
-  musicVolumeSetting: 1
+  musicVolumeSetting: 0.8
   voiceVolumeKey: VoiceVolume
-  voiceVolumeSetting: 1
+  voiceVolumeSetting: 0.8
   soundEffectVolumeKey: SEVolume
-  soundEffectVolumeSetting: 1
+  soundEffectVolumeSetting: 0.8

@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class Sounder : MonoBehaviour
+public class Sounder : SoundPlayer
 {
-    [SerializeField] internal AudioSource audioSource;
     [SerializeField] private float soundVariance;
 
     internal void PlayAudio(AudioClip clip)
     {
+        audioSource.volume = settings.voiceVolumeSetting;
         audioSource.clip = clip;
         audioSource.pitch = Random.Range(1 - soundVariance, 1 + soundVariance);
         audioSource.Play();

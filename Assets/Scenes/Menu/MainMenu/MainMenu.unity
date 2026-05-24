@@ -225,6 +225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 70067360}
+  - component: {fileID: 70067361}
   m_Layer: 5
   m_Name: VoiceControls
   m_TagString: Untagged
@@ -246,7 +247,6 @@ RectTransform:
   m_Children:
   - {fileID: 1400105105}
   - {fileID: 976459056}
-  - {fileID: 978545978}
   m_Father: {fileID: 1171366886}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -254,6 +254,19 @@ RectTransform:
   m_AnchoredPosition: {x: -0, y: -8.6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &70067361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70067359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e765da556b6d2514dabd0070333407ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SliderUpdater
+  sliderCounter: {fileID: 976459057}
 --- !u!1 &277836567
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,7 +1313,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 652513938}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3141631951394363254}
+        m_TargetAssemblyTypeName: PageTurnManager, Assembly-CSharp
+        m_MethodName: TurnPage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &652513938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1824,6 +1849,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 768957292}
+  - component: {fileID: 768957293}
   m_Layer: 5
   m_Name: MusicControls
   m_TagString: Untagged
@@ -1845,7 +1871,6 @@ RectTransform:
   m_Children:
   - {fileID: 1352484974}
   - {fileID: 1135596582}
-  - {fileID: 1729875553}
   m_Father: {fileID: 1171366886}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1853,6 +1878,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &768957293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768957291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e765da556b6d2514dabd0070333407ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SliderUpdater
+  sliderCounter: {fileID: 1135596583}
 --- !u!1 &854572697
 GameObject:
   m_ObjectHideFlags: 0
@@ -2487,7 +2525,7 @@ GameObject:
   - component: {fileID: 978545978}
   - component: {fileID: 978545979}
   m_Layer: 5
-  m_Name: SEVolumeSlider
+  m_Name: VoiceVolumeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2500,7 +2538,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 978545977}
-  m_LocalRotation: {x: -0.000000038487958, y: -0, z: -0.0000000062020447, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.050000004, y: 0.05000001, z: 0.050000012}
   m_ConstrainProportionsScale: 1
@@ -2508,11 +2546,11 @@ RectTransform:
   - {fileID: 1391505215}
   - {fileID: 1840284459}
   - {fileID: 1716638555}
-  m_Father: {fileID: 70067360}
+  m_Father: {fileID: 1171366886}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.62, y: 1.8800005}
+  m_AnchoredPosition: {x: 0.62, y: -6.7200017}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &978545979
@@ -2562,10 +2600,22 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 70067361}
+        m_TargetAssemblyTypeName: SliderUpdater, Assembly-CSharp
+        m_MethodName: UpdateText
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1075463787
 GameObject:
   m_ObjectHideFlags: 0
@@ -2968,6 +3018,9 @@ RectTransform:
   - {fileID: 1667856639}
   - {fileID: 70067360}
   - {fileID: 1642009872}
+  - {fileID: 978545978}
+  - {fileID: 1744289151}
+  - {fileID: 1729875553}
   m_Father: {fileID: 401861734}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3691,7 +3744,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'S Effect:'
+  m_text: 'Voice:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9b692838808e4964c9d1f13f79d14bf2, type: 2}
   m_sharedMaterial: {fileID: -8017359410896819076, guid: 9b692838808e4964c9d1f13f79d14bf2, type: 2}
@@ -4008,7 +4061,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 180}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.00007, y: -0.00012}
+  m_AnchoredPosition: {x: -0.00002, y: -0.00012}
   m_SizeDelta: {x: 1000, y: 1250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1590205284
@@ -4132,7 +4185,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1640689538}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7773599634670002042}
+        m_TargetAssemblyTypeName: BookManager, Assembly-CSharp
+        m_MethodName: QuitButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1640689538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4253,7 +4318,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1642009874}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3141631951394363254}
+        m_TargetAssemblyTypeName: PageTurnManager, Assembly-CSharp
+        m_MethodName: TurnPageBack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7773599634670002043}
+        m_TargetAssemblyTypeName: SettingsDataManagement, Assembly-CSharp
+        m_MethodName: SaveSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1642009874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4301,6 +4390,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1667856639}
+  - component: {fileID: 1667856640}
   m_Layer: 5
   m_Name: SEControls
   m_TagString: Untagged
@@ -4322,7 +4412,6 @@ RectTransform:
   m_Children:
   - {fileID: 742199447}
   - {fileID: 620635301}
-  - {fileID: 1744289151}
   m_Father: {fileID: 1171366886}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4330,6 +4419,19 @@ RectTransform:
   m_AnchoredPosition: {x: -0, y: -4.4}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1667856640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667856638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e765da556b6d2514dabd0070333407ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SliderUpdater
+  sliderCounter: {fileID: 620635302}
 --- !u!1 &1668532983
 GameObject:
   m_ObjectHideFlags: 0
@@ -4412,7 +4514,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1668532986}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7773599634670002042}
+        m_TargetAssemblyTypeName: BookManager, Assembly-CSharp
+        m_MethodName: StartGameButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1668532986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4785,7 +4899,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729875552}
-  m_LocalRotation: {x: -0.000000038487958, y: -0, z: -0.0000000062020447, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.050000004, y: 0.05000001, z: 0.050000012}
   m_ConstrainProportionsScale: 1
@@ -4793,7 +4907,7 @@ RectTransform:
   - {fileID: 1380677405}
   - {fileID: 1089489016}
   - {fileID: 663903988}
-  m_Father: {fileID: 768957292}
+  m_Father: {fileID: 1171366886}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4847,10 +4961,22 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 768957293}
+        m_TargetAssemblyTypeName: SliderUpdater, Assembly-CSharp
+        m_MethodName: UpdateText
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1744289150
 GameObject:
   m_ObjectHideFlags: 0
@@ -4875,7 +5001,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1744289150}
-  m_LocalRotation: {x: -0.000000038487958, y: -0, z: -0.0000000062020447, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.050000004, y: 0.05000001, z: 0.050000012}
   m_ConstrainProportionsScale: 1
@@ -4883,11 +5009,11 @@ RectTransform:
   - {fileID: 854572698}
   - {fileID: 580213703}
   - {fileID: 59431155}
-  m_Father: {fileID: 1667856639}
+  m_Father: {fileID: 1171366886}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.62, y: 1.8800005}
+  m_AnchoredPosition: {x: 0.62, y: -2.520002}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1744289152
@@ -4937,10 +5063,22 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1667856640}
+        m_TargetAssemblyTypeName: SliderUpdater, Assembly-CSharp
+        m_MethodName: UpdateText
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1840284458
 GameObject:
   m_ObjectHideFlags: 0
@@ -5605,7 +5743,7 @@ Animator:
   m_GameObject: {fileID: 7773599634670002041}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: e01ef5ed25239f04c871284ca7c91b2c, type: 3}
-  m_Controller: {fileID: 9100000, guid: 8f6439502ca6d7244943f403832f00c8, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5774,6 +5912,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1839265387540728444}
+  - component: {fileID: 1839265387540728445}
+  - component: {fileID: 1839265387540728446}
   m_Layer: 0
   m_Name: movepaper1
   m_TagString: Untagged
@@ -5914,15 +6054,53 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1304132724984211946}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.341027, y: -0.000000059604645, z: 0.9400536, w: 0.00000017881393}
-  m_LocalPosition: {x: 0.00023065537, y: 0.00083000015, z: -0.00014024139}
+  m_LocalRotation: {x: -0.0024303794, y: 0.000000029802322, z: 0.9999971, w: 0.00000011920929}
+  m_LocalPosition: {x: 0.00029, y: 0.00083, z: -0.00016}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 479014568618977425}
   - {fileID: 543234717045433425}
   m_Father: {fileID: 2711367940011945565}
-  m_LocalEulerAnglesHint: {x: 0, y: 39.879, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: -0.279, z: 180}
+--- !u!95 &1839265387540728445
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304132724984211946}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 773047603a08f4446a33793bfb894033, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1839265387540728446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304132724984211946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6c2d4f3b181c0643b2a1bd622f046fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PageTurnManager
+  anim: {fileID: 1839265387540728445}
+  pageTrigger: turnPage
+  canTurnBack: 0
+  pageBackTrigger: 
 --- !u!114 &1954693024432602761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6061,15 +6239,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3141631951394363252}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.024639513, y: 0.000000119209275, z: 0.9996964, w: -0.00000035762784}
-  m_LocalPosition: {x: 0.00036, y: 0.001, z: -0.00014}
+  m_LocalRotation: {x: -0, y: 0, z: -1, w: 0}
+  m_LocalPosition: {x: 0.00029, y: 0.001, z: -0.00014}
   m_LocalScale: {x: 1, y: 0.9999999, z: 0.99999994}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5144245005965178314}
   - {fileID: 1502585867}
   m_Father: {fileID: 2711367940011945565}
-  m_LocalEulerAnglesHint: {x: -180, y: -177.176, z: 0}
+  m_LocalEulerAnglesHint: {x: -180, y: -180, z: 0}
 --- !u!4 &3072404942277713710
 Transform:
   m_ObjectHideFlags: 0
@@ -6111,6 +6289,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3022781854727677775}
+  - component: {fileID: 3141631951394363253}
+  - component: {fileID: 3141631951394363254}
   m_Layer: 0
   m_Name: movepaper2
   m_TagString: Untagged
@@ -6118,6 +6298,44 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &3141631951394363253
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3141631951394363252}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d2c0bdd4195bf69408a12dc0c510d490, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3141631951394363254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3141631951394363252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6c2d4f3b181c0643b2a1bd622f046fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PageTurnManager
+  anim: {fileID: 3141631951394363253}
+  pageTrigger: turnPage
+  canTurnBack: 1
+  pageBackTrigger: turnPageBack
 --- !u!1 &3591368750056539175
 GameObject:
   m_ObjectHideFlags: 0
@@ -6438,15 +6656,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4242304876254586147}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.020615874, y: -0, z: 0.99978745, w: -0.0000002533197}
-  m_LocalPosition: {x: -0.000006063574, y: 0.0010011322, z: -0.00003207864}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: -0.00068, y: 0.001, z: 0.00041}
   m_LocalScale: {x: 1, y: 0.9999999, z: 0.99999994}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7818138608509899072}
   - {fileID: 694445515}
   m_Father: {fileID: 2711367940011945565}
-  m_LocalEulerAnglesHint: {x: 0, y: 2.363, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!137 &6896523057327388179
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -6601,6 +6819,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4399847589222495254}
   - component: {fileID: 223479041268678889}
+  - component: {fileID: 7773599634670002042}
+  - component: {fileID: 7773599634670002043}
   m_Layer: 0
   m_Name: Magic Book
   m_TagString: Untagged
@@ -6608,6 +6828,54 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7773599634670002042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7773599634670002041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d022300dbfa0349469fc1498df9d0f33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BookManager
+  splashLoadComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1839265387540728446}
+        m_TargetAssemblyTypeName: PageTurnManager, Assembly-CSharp
+        m_MethodName: TurnPage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  splashWait: 2
+  settings: {fileID: 7773599634670002043}
+--- !u!114 &7773599634670002043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7773599634670002041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5705d5ad6618fd469d307c14345f0b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SettingsDataManagement
+  settings: {fileID: 11400000, guid: 5dcc1e0efc26a4c43be3bc68af23424d, type: 2}
+  loadComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  musicSlider: {fileID: 1729875554}
+  voiceVolume: {fileID: 978545979}
+  effectVolume: {fileID: 1744289152}
 --- !u!4 &7818138608509899072
 Transform:
   m_ObjectHideFlags: 0
@@ -6632,15 +6900,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7404306998679086844}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0606921, y: 0.00000011920929, z: 0.99815655, w: -0.00000035762787}
-  m_LocalPosition: {x: -0.0000060635753, y: 0.0010011322, z: -0.000008602473}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 0.00029, y: 0.001, z: -0.00013}
   m_LocalScale: {x: 1, y: 0.9999999, z: 0.99999994}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3080500022283132990}
   - {fileID: 401861734}
   m_Father: {fileID: 2711367940011945565}
-  m_LocalEulerAnglesHint: {x: 0, y: 6.959, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &8281389373691596857
 GameObject:
   m_ObjectHideFlags: 0

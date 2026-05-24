@@ -237,6 +237,7 @@ MonoBehaviour:
   startDeathAnimation:
     m_PersistentCalls:
       m_Calls: []
+  scoreValue: 100
 --- !u!114 &9105302678557093785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,6 +364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySounder
   audioSource: {fileID: 4793267343944822577}
+  settings: {fileID: 11400000, guid: 5dcc1e0efc26a4c43be3bc68af23424d, type: 2}
   soundVariance: 0.15
   stats: {fileID: 11400000, guid: a886e53141aecdc478bedc5d7937e510, type: 2}
   activeSounds:
