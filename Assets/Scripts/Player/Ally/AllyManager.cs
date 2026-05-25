@@ -3,6 +3,7 @@ using Player;
 using Player.Ally;
 using Unity.VectorGraphics;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class AllyManager : MonoBehaviour
@@ -15,6 +16,7 @@ public class AllyManager : MonoBehaviour
 
     public AllyController MainAlly { get { return allies.Count > 0 ? allies[0] : null; } }
 
+    [SerializeField] private UnityEvent gameOverEvent;
     void Awake()
     {
         if (Instance != null)
@@ -72,8 +74,7 @@ public class AllyManager : MonoBehaviour
 
         if (allies.Count == 0)
         {
-            Debug.Log("Game Over");
-            SceneManager.LoadScene(0);
+            gameOverEvent?.Invoke();
             return;
         }
 

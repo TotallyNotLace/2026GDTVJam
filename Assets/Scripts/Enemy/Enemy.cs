@@ -42,4 +42,16 @@ public class Enemy : MonoBehaviour
     {
         _pool.Release(this);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("DeathFloor"))
+        {
+            OnEndOfLife();
+        }
+        if (other.CompareTag("Player"))
+        {
+            OnEndOfLife();
+        }
+    }
 }
